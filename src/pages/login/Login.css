@@ -1,0 +1,82 @@
+.haquaLogoHome{
+  width: 119px !important;
+  height: 111px !important;
+  left: 755px !important;
+  top: 150px !important;
+  border-radius: 0px !important;
+}
+
+.haquaLogoLogin {
+  width: 200px !important;
+  height: 200px !important;
+  left: 755px !important;
+  top: 150px !important;
+  border-radius: 0px !important;
+}
+.text-decorator-none{
+  text-decoration: none;
+}
+
+.buttom{
+  position: absolute;
+  width: 172px;
+  height: 60px;
+  left: 772px;
+  top: 560px;
+}
+
+.retangulo1{
+  position: absolute;
+  width: 520px;
+  height: 70px;
+  left: 555px;
+  top: 300px;
+}
+
+.border{
+  background: #F1F1F1;
+  border: 2px solid #D0DCFB;
+  border-radius: 5px;
+}
+
+.recuperarSenha{
+  width: 153px;
+  height: 18px;
+  left: 550px;
+  top: 460px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #98C7E4;
+}
+
+.cadastrar{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 7px !important;
+  color: #98C7E4;
+}
+
+.projetoHaqua{
+  position: absolute;
+  width: 135px;
+  height: 16px;
+  left: 752px;
+  top: 850px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #98C7E4;
+}
+
+body{
+  background: #022A43;
+}
