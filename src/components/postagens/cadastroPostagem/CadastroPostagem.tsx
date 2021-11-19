@@ -131,7 +131,7 @@ function CadastroPostagem() {
     }
 
     function back() {
-        history.push('/postagens')
+        history.push('/home')
     }
 
     return (
