@@ -45,7 +45,7 @@ function sobre() {
                 </Box>
 
                 <Box className='fotos'>{/*box Luis Felipe<*/}
-                    <img src="https://avatars.githubusercontent.com/u/42703204?v=4" className='imgFoto' />
+                    <img src="https://avatars.githubusercontent.com/u/42703204?v=4" alt="foto do Luis Felipe" className='imgFoto' />
                     <Box className='botaoLinks'>
                         <Button variant='contained' className='botaoLinkedin'
                             href='https://www.linkedin.com/in/lfsm/' target='_blank'>
