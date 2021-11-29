@@ -17,6 +17,7 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import { Provider } from 'react-redux';
 import store from './store/store';
 import Navbar from './components/estaticos/navbar/Navbar';
+import ModalTemas from './components/temas/modalTemas/ModalTemas';
 
 
 
@@ -30,7 +31,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <div style={{ minHeight: '50vh' }}>
+          <div style={{ minHeight: '70vh' }}>
 
             <Route exact path='/'>
               <Login />
@@ -69,7 +70,7 @@ function App() {
             </Route>
 
             <Route exact path='/formularioTema'>
-              <CadastroTema />
+              <ModalTemas />
             </Route>
 
             <Route exact path='/formularioTema/:id'>
@@ -83,6 +84,7 @@ function App() {
             <Route exact path='/sobre'>
               <Sobre />
             </Route>
+          
 
             <Route path="/deletarPostagem/:id">
               <DeletarPostagem />
@@ -90,6 +92,7 @@ function App() {
 
           </div>
         </Switch>
+        <Footer />
       </Router>
     </Provider>
     

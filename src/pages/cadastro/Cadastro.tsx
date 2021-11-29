@@ -15,6 +15,7 @@ function Cadastro() {
     const dispatch = useDispatch();
     const [token, setToken] = useState('');
 
+    const emailRegex = /\S+@\S+\.\S+/
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
@@ -23,6 +24,7 @@ function Cadastro() {
             usuario: '',
             senha: ''
         })
+
     const [userResult, setUserResult] = useState<User>(
         {
             id: 0,
@@ -30,14 +32,18 @@ function Cadastro() {
             usuario: '',
             senha: ''
         })
+
     useEffect(() => {
         if (userResult.id !== 0) {
             history.push("/login")
         }
     }, [userResult])
+
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
+
+
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setUser({
@@ -45,14 +51,19 @@ function Cadastro() {
             [e.target.name]: e.target.value
         })
     }
+
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha == user.senha) {
-            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            dispatch(addToken(token))
-            toast.success("usuario cadastrado com sucesso", {
+
+        let validarEmail = emailRegex.test(user.usuario)
+
+        if (validarEmail == null || validarEmail == false) {
+
+            console.log(emailRegex.test(user.usuario))
+
+            toast.error("Entre com um email válido.", {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -60,19 +71,42 @@ function Cadastro() {
                 theme: "colored",
                 progress: undefined,
             })
-            //history.push("/home")
+
         } else {
-            toast.error("Dados inconsistentes. Favor verificar as informações de cadastro.", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            })
+            if (confirmarSenha == user.senha) {
+                cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+                dispatch(addToken(token))
+                toast.success("Usuário cadastrado com sucesso", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                })
+
+                history.push("/login")
+            } else {
+                toast.error("Dados inconsistentes. Favor verificar as informações de cadastro.", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                })
+            }
         }
+    }
+
+    function validaemail(){
+        let usuario = document.querySelector("#usuario")
+
+        
     }
 
     return (
@@ -97,7 +131,7 @@ function Cadastro() {
                         <form onSubmit={onSubmit}>
                             <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' className="inputBackGroudCadastro" fullWidth />
 
-                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' className="inputBackGroudCadastro" fullWidth />
+                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' className="inputBackGroudCadastro" type="email" fullWidth />
 
                             <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' className="inputBackGroudCadastro" fullWidth />
 
@@ -106,7 +140,7 @@ function Cadastro() {
                             <Box marginTop={2} textAlign='center'>
 
                                 <Link to="/login" className='text-decorator-none'>
-                                    <Button type='submit' className='text-decorator-none margin-right-cadastro' variant='contained' color='secondary'>
+                                    <Button type='submit' className='text-decorator-none margin-right-cadastro' variant='contained' color='primary'>
                                         Cancelar
                                     </Button>
                                 </Link>

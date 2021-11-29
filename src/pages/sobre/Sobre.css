@@ -1,53 +1,77 @@
-.container {
-    direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #0a3753;
-}
-
-h3 {
-    text-align: center!important;
-    font-weight: bold !important;
-    color: white;
-}
-
-h5 {
-    text-align: justify;
-    font-weight: lighter;
-    color: white;
-}
-
-.txtSobre {
-    margin-left: 40px !important;
+.topSobre {
     padding: 7%;
-    padding-left: 10% !important;
+    text-align: justify !important;
+    justify-content: center !important;
+    background-color: rgb(43, 78, 100);
+}
+
+.titulo {
+    text-align: center;
+    font-family: 'Poppins', sans-serif !important;
+    color: rgb(219, 219, 219);
+    padding-bottom: 2%;
+    justify-content: center !important;
+    font-size: 50px !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+}
+
+.txtPrincipal {
+    font-family: 'Roboto', sans-serif !important;
     text-align: justify;
+    color: rgb(247, 247, 247);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.bottomSobre {
+    /* parte debaixo da pagina */
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    padding: 2%;
+    transition: width 2s;
+    padding: 5%;
+}
+
+.imgPessoal {
+    /* Box das fotos dos integrantes */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-right: 2%;
+    padding-bottom: 4%;
+    transition: width 2s;
+}
+
+.imgPessoal2 {
+    /* fotos dos integrantes */
+    border-radius: 5%;
+    width: 70%;
     margin-top: 10%;
 }
 
-.boxSobre {
-    margin-left: 200px !important;
-    margin-top: 5%;
-}
-
-.imgPrincipal {
-    width: 440px;
-    height: 450px;
-}
-
-.gridFotos {
+.txtPessoal {
+    /* Texto pitch dos integrantes */
+    display: flex;
     justify-content: center;
-    background-color: #0d4161;
+    align-items: center;
+    font-weight: 600 !important;
+    font-size: 20px;
+    padding-bottom: 2%;
+    border-radius: 15px;
 }
 
-.fotos {
-    padding: 10px;
-    margin: 10px;
+.botaoLinks {
+    /*Box com texto e botão das fotos*/
+    display: flex;
+    justify-content: center;
+    size: small;
+    padding-bottom: 10%;
 }
 
 .botaoLinkedin {
     size: small;
-    background-color: white !important;
+    background-color: rgb(246, 252, 252) !important;
     color: rgb(28, 36, 143) !important;
 }
 
@@ -57,103 +81,66 @@ h5 {
     color: white !important;
 }
 
-.imgFoto {
-    /*foto dos integrantes*/
-    width: 200px;
-    height: 200px;
-}
-
-.botaoLinks {
-    /*Box com texto e botão das fotos*/
+.Mvv {
+    /* Missão, visão, valores */
+    background-color: rgb(229, 238, 238);
+    border-radius: 25px;
     display: flex;
     justify-content: center;
-    padding: 16px;
 }
 
-.textoLinks {
-    /*texto dos botões Linkedin e Github*/
-    font-size: 90% !important;
-    font-weight: 600 !important;
+.imgMv {
+    /* Box de fotos dos integrantes */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2%;
 }
 
-.boxNome {
-    /*box contendo nome dos integrantes*/
+.imgMvv {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2%;
+}
+
+.imgMvv2 {
+    /* fotos dos integrantes */
+    width: 60%;
+    display: flex;
+    justify-items: center;
+}
+
+.imgMvv3 {
+    /* fotos dos integrantes */
+    width: 60%;
+    display: flex;
+    justify-items: flex-end;
+}
+
+.txtMvv {
+    /* Texto de Missão, visão e valores.*/
+    display: flex;
     justify-content: center;
-    color: #F9F0EE;
+    align-items: center;
+    color: rgb(61, 61, 61);
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
 }
 
+.Mvv2 {
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
 
+.txtPessoal2 {
+    justify-content: center;
+    /* margin-left: 18%; */
+    color: rgb(36, 36, 36);
+    text-align: center !important;
+    border-radius: 13px;
+}
 
-
-@media (max-width: 360px){
-
-    .container {
-        flex-flow: row wrap;
-        background-color: #0a3753;
-    }
-    
-    .txtSobre {
-        margin-left: 40px !important;
-        padding: 7%;
-        padding-left: 10% !important;
-        text-align: justify;
-        margin-top: 30%;
-    }
-    
-    .boxSobre {
-        margin-left: 200px !important;
-        margin-top: 5%;
-    }
-    
-    .imgPrincipal {
-        width: 440px;
-        height: 450px;
-    }
-    
-    .gridFotos {
-        justify-content: center;
-        background-color: #0d4161;
-    }
-    
-    .fotos {
-        padding: 10px;
-        margin: 10px;
-    }
-    
-    .botaoLinkedin {
-        size: small;
-        background-color: white !important;
-        color: rgb(28, 36, 143) !important;
-    }
-    
-    .botaoGithub {
-        size: small;
-        background-color: rgb(49, 45, 45) !important;
-        color: white !important;
-    }
-    
-    .imgFoto {
-        /*foto dos integrantes*/
-        width: 200px;
-        height: 200px;
-    }
-    
-    .botaoLinks {
-        /*Box com texto e botão das fotos*/
-        display: flex;
-        justify-content: center;
-        padding: 16px;
-    }
-    
-    .textoLinks {
-        /*texto dos botões Linkedin e Github*/
-        font-size: 90% !important;
-        font-weight: 600 !important;
-    }
-    
-    .boxNome {
-        /*box contendo nome dos integrantes*/
-        justify-content: center;
-        color: #F9F0EE;
-    }
+.nomeTexto {
+    font-weight: 800! important;
 }

@@ -1,7 +1,11 @@
 import { Button, Paper, Grid, Box, Typography, TextField, Card, CardContent } from '@material-ui/core';
 import React from 'react';
 import './Donate.css';
+import Carousel from 'react-elastic-carousel'
+import { useState } from 'react'
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+
 
 function underDev() {
     toast.warning("Esse recurso está em desenvolvimento", {
@@ -19,71 +23,104 @@ function underDev() {
 function Donate() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className="backgroundColorDonate">
+            <Grid container direction="row" justifyContent="center" alignItems="center" className="backGroundColorTopo">
                 <Grid item xs={4} className="box1donate">
                     <Box >
-                        <img src="https://i.imgur.com/NEJtMPr.png" alt="garrafa" width="340px" height="350px" />
+                        <img src="https://static.wixstatic.com/media/d8839e_390c718fa9e349ae83c44c0e48a9b4f8~mv2_d_2153_2153_s_2.jpg/v1/fill/w_1000,h_1000,al_c,q_90,usm_0.66_1.00_0.01/d8839e_390c718fa9e349ae83c44c0e48a9b4f8~mv2_d_2153_2153_s_2.jpg" alt="ODS 6" width="340px" height="350px" className="cardBorder" />
                     </Box>
                 </Grid>
-                <Grid alignItems="flex-start" item xs={5}>
+                <Grid alignItems="flex-start" item xs={6}>
                     <Box paddingX={6} paddingY={6}>
-                        <Typography variant="h1" gutterBottom className="textDonate">O SNIS 2015 divulgou que no país, 35 milhões de pessoas ainda não tem acesso à água potável. A situação da água no Brasil tem piorado com o passar do tempo e isso se deve à vários fatores.
-                            <br />
-                            <br />
-                            <br />
-                            Pensando nisso, um dos nossos objetivos é ajudar a comunidade, e por meio de doações, distribuir água potável.</Typography>
+                        <p className="textDonate">O ODS 6 visa assegurar a disponibilidade e gestão sustentável da água e saneamento para toda a população.</p>
+                        <p className="textDonate">Até 2030, alguns dos objetivos são:</p>
+                        <p className="textDonate">- Alcançar o acesso universal e equitativo a água potável e segura para todos.</p>
+                        <p className="textDonate">- Melhorar a qualidade da água, reduzindo a poluição, eliminando despejo e minimizando a liberação de produtos químicos e materiais perigosos.</p>
                     </Box>
                 </Grid>
             </Grid>
 
-            <Grid container justifyContent="center" className="backgroundColorDonate">
-                <Box>
-                    <Typography className="textDonate">Essas são as iniciativas em aberto:</Typography>
-                </Box>
+            <Card>
+                <CardContent className="backGroundDonate2">
+                    <Grid container xs={12} direction="row" justifyContent="center" alignItems="center" className="backGroundDonate1">
+                        <Grid item xs={6}>
+                            <Box>
+                                <p className="aboutFont">A ONU reconhece o acesso à água e ao saneamento básico como um direito universal. A meta é que os países membros trabalhem para que todas as pessoas tenham acesso a esse direito até 2030. No entanto, a demanda crescente por água pode afetar a produção de alimentos e gerar conflitos.</p>
+                            </Box>
+                        </Grid>
+
+                        <Grid item xs={6}>
+                            <img src="http://www.eosconsultores.com.br/wp-content/uploads/2017/11/falta-de-agua-no-mundo-16.jpg" alt="" width="90%" className="imgStyle paddingImg" />
+                        </Grid>
+                    </Grid>
+
+                </CardContent>
+                <CardContent className="backGroundDonate2">
+
+                    <Grid container xs={12} direction="row" justifyContent="center" alignItems="center" className="backGroundDonate1">
+                        <Grid item xs={6}>
+                            <Box className="paddingImg">
+                                <img src="https://biodieselbrasil.com.br/wp-content/uploads/2019/05/por-que-ainda-precisamos-falar-sobre-saneamento-basico-800x480.jpg" alt="" width="90%" className="paddingImg imgStyle" />
+                            </Box>
+                        </Grid>
+
+                        <Grid item xs={6}>
+                            <Box>
+                                <p className="aboutFont"><p>Segundo a ONU, as principais razões para a falta de acesso à água são:</p>
+                                    <p>- Urbanização; </p>
+                                    <p>- Crescimento populacional; </p>
+                                    <p> - Desigualdade social; </p>
+                                    <p> - Pobreza; </p>
+                                    <p>- Falta de acesso à educação e ao trabalho.</p></p>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
+
+            <Grid container direction="row" justifyContent="center" alignItems="center" className="gridPadding backGroundDonate2">
+                <h2>Em parceria com ONGs, pensamos em arrecadar fundos para as algumas iniciativas  </h2>
+                <h3>Caso tenha interesse em contribuir, basta clicar em uma das imagens abaixo:</h3>
             </Grid>
 
+            <Grid container direction="row" justifyContent="center" alignItems="center" className="gridPadding backGroundDonate2">
+                <Box m={1} className="cardMargin1">
+                    <div onClick={underDev}>
+                        <img src="https://www.eosconsultores.com.br/wp-content/uploads/2017/06/falta-de-saneamento.jpg" alt="Avatar" className="cardImage2" />
+                    </div>
+                    <div>
+                        <Typography className="titleFont">Pessoas em condição de rua</Typography>
+                        <p className="textFont">Criação de bebedouros, torneiras coletivas</p>
+                        <p className="textFont">e distribuição de água, nos locais</p>
+                        <p className="textFont">em que há grande concentração</p>
+                        <p className="textFont"> de pessoas em situação de rua.</p>
 
-            <Grid container direction="row" justifyContent="center" alignItems="center" className="backgroundColorDonate">
-                <Box m={1}>
-                    <Card className="cardColor">
-                        <CardContent>
-                            <div className="card">
-                                <img src="https://www.correiodopovo.com.br/image/policy:1.514292:1604497439/.jpg?f=2x1&$p$f=7d891a5&w=720&$w=3b33d2d" alt="Avatar" width='400px' height="300px" />
-                            </div>
-                            <div>
-                                <Typography className="titleText">Abrigo de animais em São Paulo</Typography>
-                                <Button onClick={underDev} className='botaoSaibaMais'>Saber mais</Button>
-                                <Button onClick={underDev} className='botaoDoar'>Doar</Button>
-                            </div>
-
-                        </CardContent>
-                    </Card>
+                        <Box className="buttonImg">
+                            <Button className="buttomColor" onClick={underDev}>
+                                Donate
+                            </Button>
+                        </Box>
+                    </div>
                 </Box>
 
-                <Box m={1}>
-                    <Card>
-                        <CardContent>
-                            <div className="card">
-                                <img src="https://www.tupi.fm/wp-content/uploads/IMG_6102-1.jpg" alt="Avatar" width='400px' height="300px" />
-                                <Typography className="titleText">Pessoas em condição de rua</Typography>
-                                <Button onClick={underDev} className='botaoSaibaMais'>Saber mais</Button>
-                                <Button onClick={underDev} className='botaoDoar'>Doar</Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </Box>
 
-                <Box m={1}>
-                    <Card>
-                        <CardContent>
-                            <div className="card">
-                                <img src="https://www.correio24horas.com.br/fileadmin/_processed_/c/3/csm_24102018_baz_sommelier_de_aguas_cred_divulgacao_shutterstock_1_aff62af31d.jpg" alt="Avatar" width='400px' height="300px" />
-                                <Typography className="titleText">Iniciativa 3</Typography>
-                                <Button onClick={underDev} className='botaoSaibaMais'>Saber mais</Button>
-                                <Button onClick={underDev} className='botaoDoar'>Doar</Button>
-                            </div>
-                        </CardContent>
-                    </Card>
+
+                <Box m={1} className="cardMargin">
+                    <div>
+                        <img src="https://www.politize.com.br/wp-content/uploads/2019/02/saneamento-basico-no-Brasil-Politize.jpg" alt="Comunidade" className="cardImage3" />
+                    </div>
+                    <div>
+                        <Typography className="titleFont">Comunidades carentes</Typography>
+                        <p className="textFont">Auxílio na construção de sistemas de </p>
+                        <p className="textFont">distribuição de água, desde a</p>
+                        <p className="textFont">construção de poços, edificação</p>
+                        <p className="textFont">de caixa d’água e canalização.</p>
+
+                        <Box className="buttonImg">
+                            <Button className="buttomColor" onClick={underDev}>
+                                Donate
+                            </Button>
+                        </Box>
+                    </div>
                 </Box>
             </Grid>
 
