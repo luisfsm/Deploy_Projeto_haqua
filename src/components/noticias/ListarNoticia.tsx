@@ -68,21 +68,18 @@ function ListarNoticia() {
     
     return (
         <>
-            {
-                lists.map((noticia, i) => (
+   
                     <Box marginTop={1} margin={1} display="flex" justifyContent="center" >
                         <Grid container >
                             <Grid item alignItems='center'>
                                 <Box>
                                     <ButtonBase>
-                                        <a href={noticia.url} target="_blank" ><Img alt={noticia.title} src={noticia.urlToImage} title={noticia.title} /></a>
+                                        <a href="https://www.bbc.com/portuguese/internacional-59086119" target="_blank" ><Img alt="A cidade dos EUA onde água contaminada não permite nem escovar dentes" src="https://ichef.bbci.co.uk/news/1024/branded_portuguese/071F/production/_121232810_gettyimages-954364594.jpg" title="A cidade dos EUA onde água contaminada não permite nem escovar dentes" /></a>
                                     </ButtonBase>
                                 </Box>
                             </Grid>
                         </Grid>
                     </Box>
-                ))
-            }
         </>)
 }
 
