@@ -45,7 +45,7 @@ function Footer() {
                                     </p>
                                 </Box>
                                 
-                                <Box className="footerTexto">
+                                <Box className="footerTexto" >
                                    <a href="https://github.com/luisfsm/Projeto_Integrador" className='text-decorator-none footerTexto' target="_blank" >Github</a> 
                                 </Box>
                             </Grid>
@@ -55,7 +55,7 @@ function Footer() {
                             </Grid>
                         </Grid>
                         <Box textAlign="center" pt={{ xs: 5, sm: 10 }}
-                            pb={{ xs: 5, sm: 0 }}>
+                            pb={{ xs: 5, sm: 0 }} marginTop={2}>
                             Projeto Haqua &copy; {new Date().getFullYear()}
                         </Box>
                     </Container>
