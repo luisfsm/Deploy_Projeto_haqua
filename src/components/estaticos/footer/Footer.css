@@ -1,4 +1,4 @@
-.footerTamanho{
+:ng-deep.footerTamanho{
     padding: 20px in !important;
 }
 
@@ -6,7 +6,6 @@
     margin-top: 2px;
     color: white !important;
 }
-
 
 footer{
     background: #022A43 !important;
